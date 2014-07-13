@@ -1,0 +1,144 @@
+% Konfigurasi LaTeX yang disesuaikan dengan aturan UNPAM
+% 
+% @author  IMRON ROSDIANA
+% @version v.1
+%
+
+% Mengatur bahasa latex
+\usepackage[bahasa]{babel}
+\usepackage[utf8]{inputenc}
+
+%
+% From The tocbibind package [author: Peter Wilson, Herries Press]:
+% The tocbibind package can be used to add document elements like a 
+% bibliography or an index to the Table of Contents. The package is designed 
+% to work with the four standard book, report, article and proc classes, and to 
+% a limited extent with the ltxdoc class.
+% 
+%\usepackage{tocbibind}
+
+% Untuk pengaturan spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% Untuk mengatur level section 
+\setcounter{secnumdepth}{5}
+
+% Digunakan untuk memasukan gambar ke laporan. 
+\usepackage{graphicx}
+
+% Untuk mengatur spacing antara paragraf
+\usepackage{parskip}
+
+% Membuat indent
+\usepackage{indentfirst}
+\setlength\parindent{1.5cm}
+
+% Untuk mengkustomisasi margin
+\usepackage{scrextend}
+
+% Untuk mengatur header dan footer
+\usepackage{fancyhdr}
+
+% Untuk menambahkan package link
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  	pdftitle={Skripsi},
+  	pdfauthor={\textcopyright\ Imron Rosdiana},
+  	pdfcreator={\LaTeX\ with package \flqq hyperref\frqq},
+  	pdfsubject={PERANCANGAN SISTEM INFORMASI KOPERASI SIMPAN PINJAM BERBASIS WEB},
+  	pdfkeywords={Latex, Template Latex}
+	}
+
+% Membuat seluruh tulisan menjadi Times New Roman. 
+\usepackage{pslatex}
+
+% Merubah numbering chapter dan section untuk judul setiap bab menggunakan romawi dan judul anak bab menggunakan arabic
+\renewcommand\thechapter{\Roman{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}\hspace{0,3cm}}
+\renewcommand{\thesubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}\hspace{-0,35cm}}
+
+% Merubah huruf kapital pada judul daftar isi, daftar gambar, dan daftar table
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\hfil\large\bfseries\MakeUppercase}
+\renewcommand{\cftloftitlefont}{\hfil\large\bfseries\MakeUppercase}
+\renewcommand{\cftlottitlefont}{\hfil\large\bfseries\MakeUppercase}
+
+% Mengatur font section
+\usepackage{sectsty}
+\sectionfont{\fontsize{12}{14}\selectfont}
+\subsectionfont{\fontsize{12}{14}\selectfont}
+\subsubsectionfont{\fontsize{12}{14}\selectfont}
+
+% Untuk merupakan format penulisan BAB
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+	{\doublespacing\fontsize{14pt}{16pt}\bfseries}
+	{\MakeUppercase{\chaptertitlename\ \thechapter}\filcenter}		{0pt}{\centering\uppercase}
+\titlespacing*{\chapter}{0pt}{-1cm}{20pt}
+
+% Mengatur spacing section
+\titlespacing*{\section}
+{0pt}{0pt}{-0.05cm}
+\titlespacing*{\subsection}
+{0pt}{0pt}{-0.05cm}
+\titlespacing*{\subsubsection}
+{0pt}{0pt}{-0.05cm}
+	
+% Digunakan untuk mengatur caption dalam dokumen.
+\usepackage[font=footnotesize,format=plain,labelfont=bf,up,textfont=up]{caption}
+% Untuk menghapus titik dua (colon)
+\captionsetup[figure]{labelsep=space}
+\captionsetup[table]{labelsep=space}
+
+% Mengatur nomor caption gambar
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+
+% Mengatur nomor caption table
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+% Mengatur Hyphenation pada latex
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000
+
+% Untuk mengatur setting indent
+\setlength\parindent{1.30cm}
+
+% Untuk memasukkan table
+\usepackage{tabularx}
+
+% Untuk mengatur width
+\usepackage{changepage}
+
+% Menggatur setting halaman 
+\usepackage{geometry}
+\geometry{
+  left=4cm,            % <-- you want to adjust this
+  top=3cm,
+  right=3cm,
+  bottom=3cm,
+  headheight=3cm,       % <-- and this
+  headsep=2ex,          % <-- and this
+}
+
+% Teks testing
+\usepackage{blindtext}
+\usepackage{lipsum}
+
+% Untuk mengatur subscript supscript
+\usepackage{fixltx2e}
+
+% Untuk mengatur wrap picture
+\usepackage{wrapfig}
+
+% Untuk notasi matematika
+\usepackage{amsmath}
+\usepackage{stmaryrd}
+\usepackage{mathtools}
+
+% Untuk mengatur spacing daftar gambar
+\newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
+\addtocontents{lof}{\protect\noaddvspace}
